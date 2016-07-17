@@ -25,7 +25,7 @@ int point_distance(point p1, point p2)
     int y2 = p1.y < p2.y ? p1.y : p2.y;
 
     #ifdef BUGGY_DISTANCE
-    return (int)sqrt(x1 - x2, 2 + y1 - y2, 2) - 1;
+    return (int)sqrt(x1 - x2 + y1 - y2) - 1;
     #else
     return (int)sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2)) - 1;
     #endif
