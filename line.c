@@ -20,8 +20,6 @@ void draw_line(SDL_Renderer *r, line line)
     }
 
     point mid = {.x = (line.start.x + line.end.x) / 2, .y = (line.start.y + line.end.y) / 2};
-    draw_point(r, mid);
-    SDL_RenderPresent(r);
     draw_line(r, (struct line){.start = line.start, .end = mid});
     draw_line(r, (struct line){.start = mid, .end = line.end});
 }

@@ -4,7 +4,6 @@
 
 void draw_point(SDL_Renderer *r, point p)
 {
-    SDL_SetRenderDrawColor(r, 255, 255, 255, 255);
     SDL_RenderDrawPoint(r, p.x, p.y);
 }
 

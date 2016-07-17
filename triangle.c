@@ -23,9 +23,14 @@ void draw_triangle_filled_rect(SDL_Renderer *r, point tp1, point bp1, point tp2,
     point mp1 = point_mid(tp1, bp1);
     point mp2 = point_mid(tp2, bp2);
     draw_line(r, (struct line){mp1, mp2});
-
+    SDL_RenderPresent(r);
+    SDL_Delay(10);
     draw_triangle_filled_rect(r, tp1, mp1, tp2, mp2);
+    SDL_RenderPresent(r);
+            SDL_Delay(10);
     draw_triangle_filled_rect(r, mp1, bp1, mp2, bp2);
+    SDL_RenderPresent(r);
+            SDL_Delay(10);
 }
 
 void draw_triangle_filled(SDL_Renderer *r, triangle t)
@@ -40,6 +45,8 @@ void draw_triangle_filled(SDL_Renderer *r, triangle t)
 
 
     draw_triangle_filled(r, (struct triangle){t.p1, mp1, mp2});
+    SDL_RenderPresent(r);
+            SDL_Delay(10);
     draw_triangle_filled_rect(r, mp1, t.p2, mp2, t.p3);
 }
 
